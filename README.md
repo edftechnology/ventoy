@@ -13,7 +13,7 @@ _This document contains the main commands and settings for configuring/installin
 
 ### `ventoy`
 
-O Ventoy é uma ferramenta de código aberto que permite criar um pendrive bootável multifuncional. Com o Ventoy, é possível copiar várias imagens ISO para o pendrive e inicializá-las diretamente sem precisar gravar o pendrive novamente. Isso oferece flexibilidade para usuários que precisam manter diversas ferramentas de inicialização, como sistemas operacionais e utilitários de diagnóstico, em um único dispositivo.
+O `Ventoy` é uma ferramenta de código aberto que permite criar um pendrive bootável multifuncional. Com o `Ventoy`, é possível copiar várias imagens ISO para o pendrive e inicializá-las diretamente sem precisar gravar o pendrive novamente. Isso oferece flexibilidade para usuários que precisam manter diversas ferramentas de inicialização, como sistemas operacionais e utilitários de diagnóstico, em um único dispositivo.
 
 
 ## 1. Como configurar/instalar/usar o `ventoy` no `Linux Ubuntu` [1][3]
@@ -41,13 +41,11 @@ Para configurar/instalar/usar o `ventoy` no `Linux Ubuntu`, você pode seguir es
     2.8 Realmente atualizar os pacotes instalados para as suas versões mais recentes, com base na última vez que você executou `sudo apt update`. Digite o seguinte comando e pressione `Enter`: `sudo apt full-upgrade -y`
    
 
-https://chat.openai.com/c/7a691ad1-1357-48f3-85fc-a3b083d9f2c6
-
 Para instalar o `Ventoy` no `Linux Ubuntu` pelo `Terminal Emulator`, você pode seguir os passos abaixo. O `Ventoy` é uma ferramenta de código aberto que permite criar um drive USB bootável contendo várias imagens `.iso`, permitindo que você escolha qual sistema operacional inicializar durante a partida do computador.
 
-1. **Baixe o pacote Ventoy:** Primeiro, você precisa baixar o pacote mais recente do Ventoy do site oficial. Você pode fazer isso visitando `https://www.ventoy.net` e navegando até a seção de download para baixar a versão para `Linux`.
+1. **Baixe o pacote `Ventoy`:** Primeiro, você precisa baixar o pacote mais recente do Ventoy do site oficial. Você pode fazer isso visitando `https://www.ventoy.net` e navegando até a seção de _download_ para baixar a versão para `Linux`.
 
-2. **Extraia o arquivo baixado:** Após o download, você precisará extrair o arquivo. Você pode fazer isso com o comando `tar` no terminal. Supondo que o arquivo baixado esteja no diretório Downloads, o comando seria algo como: `tar -xvzf ~/Downloads/ventoy-x.x.x-linux.tar.gz`
+2. **Extraia o arquivo baixado:** Após o _download_, você precisará extrair o arquivo. Você pode fazer isso com o comando `tar` no `Terminal Emulator`. Supondo que o arquivo baixado esteja no diretório `~/Downloads`, o comando seria algo como: `sudo tar -xvzf ~/Downloads/ventoy-x.x.x-linux.tar.gz`
 
     Substitua `ventoy-x.x.x-linux.tar.gz` pelo nome do arquivo que você baixou.
 
@@ -55,17 +53,17 @@ Para instalar o `Ventoy` no `Linux Ubuntu` pelo `Terminal Emulator`, você pode 
 
     **NÃO** se esqueça de colocar a pasta do Ventoy em `~/Downloads`, se não, você terá dificuldades em instalá-lo.
 
-3. **Instale o `Ventoy` no seu drive USB:** Primeiro, você precisa identificar o dispositivo USB em que deseja instalar o Ventoy. Use o comando `lsblk` para listar todos os dispositivos de bloco e identificar seu drive USB. Tenha cuidado para selecionar o dispositivo correto, pois o processo irá formatar o drive e todos os dados existentes serão perdidos: `lsblk`
+3. **Instale o `Ventoy` no seu drive USB:** Primeiro, você precisa identificar o dispositivo USB em que deseja instalar o `Ventoy`. Use o comando `lsblk` para listar todos os dispositivos de bloco e identificar seu drive USB. Tenha cuidado para selecionar o dispositivo correto, pois o processo irá formatar o drive e todos os dados existentes serão perdidos: `lsblk`
 
-4. Identifique seu drive USB (por exemplo, `/dev/sdc`) e prossiga com a instalação do `Ventoy` nesse drive. Substitua `/dev/sdx` pelo caminho correto do seu drive USB. `sudo ./Ventoy2Disk.sh -i /dev/sdx`
+4. Identifique seu drive USB (por exemplo, `/dev/sdc`) e prossiga com a instalação do `Ventoy` nesse _drive_. Substitua `/dev/sdx` pelo caminho correto do seu drive USB. `sudo ./Ventoy2Disk.sh -i /dev/sdx`
 
     - **`-i`:** significa instalar o `Ventoy` no dispositivo especificado.
 
     **Nota:** Tenha certeza de substituir `/dev/sdx` pelo identificador correto do seu drive USB. Você não quer acidentalmente formatar o dispositivo errado.
 
-Esses passos devem instalar o `Ventoy` no seu drive USB, permitindo que você copie imagens ISO para o drive e as inicialize diretamente através do menu de boot do Ventoy.
+    Esses passos devem instalar o `Ventoy` no seu drive USB, permitindo que você copie imagens ISO para o drive e as inicialize diretamente através do menu de boot do Ventoy.
 
-5. Copie os arquivos `.iso` para a pendrive que foi formatado pelo Ventoy, pronto, agora você possui um pendrive multiboot com um ou vários sistemas operacionais.
+5. Copie os arquivos `.iso` para a pendrive que foi formatado pelo `Ventoy`, pronto, agora você possui um _pendrive multiboot_ com um ou vários sistemas operacionais.
 
 **Importante:** Antes de executar comandos, especialmente aqueles que modificam partições ou dispositivos, como a instalação do Ventoy, certifique-se de ter backups de seus dados e de ter lido e entendido cada passo. Comandos como `sudo ./Ventoy2Disk.sh -i /dev/sdx` podem causar a perda de dados se direcionados ao dispositivo errado.
 
