@@ -11,20 +11,20 @@
 # 
 # _This document contains the main commands and settings for configuring/installing/using the `ventoy` on `Linux Ubuntu`._
 # 
-
+# 
 # ## Descrição [2]
 # 
 # ### `ventoy`
 # 
 # O `Ventoy` é uma ferramenta de código aberto que permite criar um pendrive bootável multifuncional. Com o `Ventoy`, é possível copiar várias imagens ISO para o pendrive e inicializá-las diretamente sem precisar gravar o pendrive novamente. Isso oferece flexibilidade para usuários que precisam manter diversas ferramentas de inicialização, como sistemas operacionais e utilitários de diagnóstico, em um único dispositivo.
 # 
-
+# 
 # ## 1. Como configurar/instalar/usar o `ventoy` no `Linux Ubuntu` [1][3]
 # 
 # Para configurar/instalar/usar o `ventoy` no `Linux Ubuntu`, você pode seguir estes passos:
 # 
 # 1. Abra o `Terminal Emulator`. Você pode fazer isso pressionando: `Ctrl + Alt + T`
-
+# 
 # 2. Certifique-se de que seu sistema esteja limpo e atualizado.
 # 
 #     2.1 Limpar o `cache` do gerenciador de pacotes `apt`. Especificamente, ele remove todos os arquivos de pacotes (`.deb`) baixados pelo `apt` e armazenados em `/var/cache/apt/archives/`. Digite o seguinte comando: `sudo apt clean` 
@@ -43,7 +43,7 @@
 # 
 #     2.8 Realmente atualizar os pacotes instalados para as suas versões mais recentes, com base na última vez que você executou `sudo apt update`. Digite o seguinte comando e pressione `Enter`: `sudo apt full-upgrade -y`
 #    
-
+# 
 # Para instalar o `Ventoy` no `Linux Ubuntu` pelo `Terminal Emulator`, você pode seguir os passos abaixo. O `Ventoy` é uma ferramenta de código aberto que permite criar um drive USB bootável contendo várias imagens `.iso`, permitindo que você escolha qual sistema operacional inicializar durante a partida do computador.
 # 
 # 1. **Baixe o pacote `Ventoy`:** Primeiro, você precisa baixar o pacote mais recente do Ventoy do site oficial. Você pode fazer isso visitando `https://www.ventoy.net` e navegando até a seção de _download_ para baixar a versão para `Linux`.
@@ -69,7 +69,7 @@
 # 5. Copie os arquivos `.iso` para a pendrive que foi formatado pelo `Ventoy`, pronto, agora você possui um _pendrive multiboot_ com um ou vários sistemas operacionais.
 # 
 # **Importante:** Antes de executar comandos, especialmente aqueles que modificam partições ou dispositivos, como a instalação do Ventoy, certifique-se de ter backups de seus dados e de ter lido e entendido cada passo. Comandos como `sudo ./Ventoy2Disk.sh -i /dev/sdx` podem causar a perda de dados se direcionados ao dispositivo errado.
-
+# 
 # ### 1.1 Código completo para configurar/instalar/usar
 # 
 # Para configurar/instalar/usar o `ventoy` no `Linux Ubuntu` sem precisar digitar linha por linha, você pode seguir estas etapas:
@@ -82,10 +82,11 @@
 #     NÂO há.
 #     ```
 # 
-
+# 
 # ## Referências
 # 
 # [1] OPENAI. ***Instalar Ventoy no Ubuntu.*** Disponível em: <https://chat.openai.com/c/f274e863-9214-4f34-9adf-b8b1fdf17029> (texto adaptado). Acessado em: 03/04/2023 17:11.
 # 
 # [2] OPENAI. ***Vs code: editor popular.*** Disponível em: <https://chat.openai.com/c/b640a25d-f8e3-4922-8a3b-ed74a2657e42> (texto adaptado). Acessado em: 03/04/2024 17:10.
+# 
 # 
