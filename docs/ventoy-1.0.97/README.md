@@ -77,3 +77,4 @@ Para configurar/instalar/usar o `speedtest` no `Linux Ubuntu` sem precisar digit
 [1] OPENAI. ***Instalar speedtest-cli no ubuntu.*** Disponível em: <https://chat.openai.com/c/09b3a046-d1c5-42ce-b924-ab66e10a2e43> (texto adaptado). ChatGPT. Acessado em: 25/10/2023 10:24.
 
 [2] OPENAI. ***Vs code: editor popular.*** Disponível em: <https://chat.openai.com/c/b640a25d-f8e3-4922-8a3b-ed74a2657e42> (texto adaptado). ChatGPT. Acessado em: 16/11/2023 10:06.
+
