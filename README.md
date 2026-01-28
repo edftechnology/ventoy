@@ -182,32 +182,48 @@ arquivos de persistência (ex.: 4 GB cada):
 
 ### 2.3 Associar cada ISO ao seu arquivo de persistência
 
+O Ventoy aceita o `ventoy.json` na raiz e também em `/ventoy/ventoy.json`
+ (depende da versão/configuração). Por isso deixei nos dois lugares — é 
+ o jeito mais seguro de garantir que ele leia.
+
 1. Crie o arquivo `ventoy.json` em `/media/edenedfsls/Ventoy/` (se a pasta não existir, crie-a):
 
     ```bash
-    mkdir -p $USB/ventoy
+    mkdir -p /media/edenedfsls/Ventoy/ventoy
+    touch ventoy.json
     ```
 
 2. Conteúdo sugerido do `ventoy.json`:
 
     ```bash
     {
-        "persistence": [
-            {
-            "image": "/xubuntu-22.04.5-desktop-amd64.iso",
-            "backend": "/persistence/xubuntu.dat"
-            },
-            {
-            "image": "/kali-linux-2024.3-live-amd64.iso",
-            "backend": "/persistence/kali.dat"
-            }
-        ]
+    "persistence": [
+        {
+        "image": "/xubuntu-22.04.5-desktop-amd64.iso",
+        "backend": "/persistence/xubuntu.dat",
+        "timeout": 10,
+        "autosel": 1
+        },
+        {
+        "image": "/kali-linux-2024.3-live-amd64.iso",
+        "backend": "/persistence/kali.dat",
+        "timeout": 10,
+        "autosel": 1
+        }
+    ]
     }
     ```
 
+### 2.4 Como iniciar o _boot_ de persistÊncia
+
+1. Selecione o ISO.
+
+2. Vá em Boot in normal mode.
+
+3. Deve aparecer o prompt de persistência com contagem de 10s.
 
 
-### 2.4 Observações importantes
+### 2.5 Observações importantes
 
 - Ao inicializar pelo `Ventoy`, selecione a opção Persistence (quando aparecer) para usar o armazenamento persistente.
 - Se o `Linux Ubuntu` não reconhecer a persistência, recrie o arquivo com o _label_ adequado (em versões antigas, `casper-rw`; em versões mais novas, writable). Exemplo:
