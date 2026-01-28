@@ -127,6 +127,78 @@ Para configurar/instalar/usar o `ventoy` no `Linux Ubuntu` sem precisar digitar 
     ```
 
 
+## 2. Criar boot persistente com o `ventoy`
+
+O **boot persistente** permite salvar mudanças (arquivos, pacotes, configurações) em um sistema 
+*live*. Abaixo está um exemplo no **Linux Ubuntu**, usando as ISOs do **Xubuntu** e do **Kali**.
+
+### 2.1 Criar arquivos de persistência
+
+1. No diretório onde você extraiu o `ventoy`, use o _script_ `CreatePersistentImg.sh` para criar os 
+arquivos de persistência (ex.: 4 GB cada):
+
+  ```bash
+  cd /media/edenedfsls/Ventoy/ventoy-1.0.97
+  sudo ./CreatePersistentImg.sh -s 4096 -l casper-rw -o /media/edenedfsls/Ventoy/persistence/
+  xubuntu.dat
+  sudo ./CreatePersistentImg.sh -s 4096 -l persistence -c persistence.conf -o /media/edenedfsls/Ventoy/
+  persistence/kali.dat
+
+  ls -lh /media/edenedfsls/Ventoy/persistence
+  ```
+
+  **OBSERVAÇÃO(ÕES)**:
+  
+  - **NÃO** esqueça de alterar o nome do usuário `edenedfsls` para o nome do usuário em questão.
+
+  - `Kali` precisa do arquivo `persistence.conf` dentro do _backend_ de persistência. O Comando
+  `sudo ./CreatePersistentImg.sh -s 4096 -l persistence -c persistence.conf -o /media/edenedfsls/Ventoy/
+  persistence/kali.dat` já cria o arquivo com o conteúdo `/ union`.
+
+
+
+### 2.3 Associar cada ISO ao seu arquivo de persistência
+
+1. Crie o arquivo `ventoy.json` em `/media/edenedfsls/Ventoy/` (se a pasta não existir, crie-a):
+
+    ```bash
+    mkdir -p $USB/ventoy
+    ```
+
+2. Conteúdo sugerido do `ventoy.json`:
+
+    ```bash
+    {
+        "persistence": [
+            {
+            "image": "/xubuntu-22.04.5-desktop-amd64.iso",
+            "backend": "/persistence/xubuntu.dat"
+            },
+            {
+            "image": "/kali-linux-2024.3-live-amd64.iso",
+            "backend": "/persistence/kali.dat"
+            }
+        ]
+    }
+    ```
+
+
+
+### 2.4 Observações importantes
+
+- Ao inicializar pelo `Ventoy`, selecione a opção Persistence (quando aparecer) para usar o armazenamento persistente.
+- Se o `Linux Ubuntu` não reconhecer a persistência, recrie o arquivo com o _label_ adequado (em versões antigas, `casper-rw`; em versões mais novas, writable). Exemplo:
+
+    ```bash
+    sudo /media/edenedfsls/Ventoy/ventoy-1.0.97/CreatePersistentImg.sh -s 8192 -t ext4 -l writable $USB/persistence/xubuntu.dat
+    ```
+
+- Para o `Kali`, geralmente o _label_ recomendado é persistence. Se necessário, recrie assim:
+
+    ```bash
+    sudo /media/edenedfsls/Ventoy/ventoy-1.0.97/CreatePersistentImg.sh -s 8192 -t ext4 -l persistence $USB/persistence/kali.dat
+    ```
+
 ## Referências
 
 [1] OPENAI. ***Instalar `Ventoy` no Ubuntu.*** Disponível em: <https://chat.openai.com/c/f274e863-9214-4f34-9adf-b8b1fdf17029> (texto adaptado). Acessado em: 03/04/2023 17:11.
