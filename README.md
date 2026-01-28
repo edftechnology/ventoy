@@ -137,6 +137,8 @@ O **boot persistente** permite salvar mudanças (arquivos, pacotes, configuraç�
 1. No diretório onde você extraiu o `ventoy`, use o _script_ `CreatePersistentImg.sh` para criar os 
 arquivos de persistência (ex.: 4 GB cada):
 
+  **NOTA(S)**: Lei as **OBSERVAÇÃO(ÕES)** antes de executar o(s) comando(s) abaixo:
+
   ```bash
   cd /media/edenedfsls/Ventoy/ventoy-1.0.97
   sudo ./CreatePersistentImg.sh -s 4096 -l casper-rw -o /media/edenedfsls/Ventoy/persistence/
@@ -150,6 +152,27 @@ arquivos de persistência (ex.: 4 GB cada):
   **OBSERVAÇÃO(ÕES)**:
   
   - **NÃO** esqueça de alterar o nome do usuário `edenedfsls` para o nome do usuário em questão.
+
+  - Demoram alguns minutos para criar os arquivos, tenha paciência. No final da criação de cada
+  arquivo será gerada uma saída, por exemplo:
+
+  ```bash
+  sudo ./CreatePersistentImg.sh -s 4096 -l casper-rw -o /media/edenedfsls/Ventoy/persistence/xubuntu.dat
+  [sudo] password for edenedfsls: 
+  4096+0 records in
+  4096+0 records out
+  4294967296 bytes (4,3 GB, 4,0 GiB) copied, 353,26 s, 12,2 MB/s
+  mke2fs 1.46.5 (30-Dec-2021)
+  Creating filesystem with 1048576 4k blocks and 262144 inodes
+  Filesystem UUID: dc86edf5-8758-4163-ab88-186ff81ff2cb
+  Superblock backups stored on blocks: 
+    32768, 98304, 163840, 229376, 294912, 819200, 884736
+
+  Allocating group tables: done                            
+  Writing inode tables: done                            
+  Creating journal (16384 blocks): done
+  Writing superblocks and filesystem accounting information: done 
+  ```
 
   - `Kali` precisa do arquivo `persistence.conf` dentro do _backend_ de persistência. O Comando
   `sudo ./CreatePersistentImg.sh -s 4096 -l persistence -c persistence.conf -o /media/edenedfsls/Ventoy/
